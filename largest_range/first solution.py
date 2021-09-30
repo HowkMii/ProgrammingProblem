@@ -4,7 +4,7 @@
 def largestRange(array):
 
     numbers ={x:0 for x in array}
-    left = right = 0
+    l = r = 0
     for number in array :
         if numbers[number] == 0 :
             left_count = number - 1
@@ -23,6 +23,6 @@ def largestRange(array):
             right_count -= 1
 
             if (right-left) <=(right_count-left_count):
-                right = right_count
-                left = left_count
-    return[left, right]
+                r = right_count
+                l = left_count
+    return[l, r]
