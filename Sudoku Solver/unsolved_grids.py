@@ -1,3 +1,5 @@
+# CODE: This is just a utility module for Sudoku_Solver_BackTracking
+
 # beginner ones
 test1 = [[0, 0, 4, 8, 0, 5, 9, 3, 0],
          [0, 3, 0, 4, 6, 0, 0, 8, 5],
