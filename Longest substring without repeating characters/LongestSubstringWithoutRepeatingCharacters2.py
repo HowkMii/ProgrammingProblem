@@ -10,8 +10,7 @@ def norepeats(string):
         if currentcount > maxcount:
             maxcount = currentcount
         currentcount = 1
-        seen = {}
-        seen[character] = 1
+        seen = {character:1}
     return maxcount
 
 
