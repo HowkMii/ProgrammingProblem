@@ -8,11 +8,11 @@
 
 
 def alphabetSoup (string):
-    li = sorted(list(string))
+    liiiii = sorted(list(string))
     lowerLi = sorted(list(string.lower()))
     caps = []
     newString = ''
-    for char in li:
+    for char in liiiii:
         if char.isupper():
             caps.append(char)
     for letter in lowerLi:
