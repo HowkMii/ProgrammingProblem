@@ -1,0 +1,26 @@
+#---Problem Statement---
+# Difficulty :Hard
+
+#Given two strings where first string may contain wild card characters and second string is a normal string. Write a function that returns true if the two strings match. The following are allowed wild card characters in first string. 
+
+# * --> Matches with 0 or more instances of any character or set of characters.
+# ? --> Matches with any one character.
+# For example, “g*ks” matches with “geeks” match. And string “ge?ks*” matches with “geeksforgeeks” (note ‘*’ at the end of first string). But “g*k” doesn’t match with “gee” as character ‘k’ is not present in second string.
+
+
+
+def solve(a,b):
+    n,m=len(a),len(b)
+    if n==0 and m==0:
+        return True
+    if n > 1 and a[0] == ‘*’ and m == 0:
+        return False
+    if (n > 1 and a[0] == ‘?’) or (n != 0 and m !=0 and a[0] == b[0]):
+        return solve(a[1:],b[1:]);
+    if n !=0 and a[0] == ‘*’:
+        return solve(a[1:],b) or solve(a,b[1:])
+    return False
+
+str1=input(“Enter string containing wild characters:\n“)
+str2=input(“Enter string to be matched:\n“)
+print(solve(str1,str2))
