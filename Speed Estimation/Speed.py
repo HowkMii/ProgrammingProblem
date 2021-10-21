@@ -37,7 +37,7 @@ def avgspeed(completeList,averageofitems):
 def face_data(frame):
     face_width = 0
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    haar_cascade = cv.CascadeClassifier(r'D:\ProgrammingProblem\Speed Estimation\haar_face.xml')
+    haar_cascade = cv.CascadeClassifier(r'D:\Python-Projects\OpenCV\haar_face.xml')
     faces = haar_cascade.detectMultiScale(gray,scaleFactor=1.1, minNeighbors=5)
     for (x,y,w,h) in faces:
             cv.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),thickness=2)
@@ -45,7 +45,7 @@ def face_data(frame):
             # print("face width: ",w)
     return face_width
 
-ref_image = cv.imread(r'D:\ProgrammingProblem\Speed Estimation\ref.jpg')
+ref_image = cv.imread(r'D:\Python-Projects\OpenCV\ref.jpg')
 ref_image_face_width = face_data(ref_image)
 Focal_length_found = Focal_length(known_distance,known_width,ref_image_face_width)
 print(Focal_length_found)
